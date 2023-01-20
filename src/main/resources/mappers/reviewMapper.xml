@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.en3873.spring.ex.mybatis.dao.ReviewDAO">
+	
+	<select id="selectReview" resultType="com.en3873.spring.ex.mybatis.model.Review"
+	parameterType="int">
+		SELECT
+			`id`
+			,`storeName`
+			,`menu`
+			,`userName`
+			,`point`
+			,`review`
+			,`createdAt`
+			,`updatedAt`
+		FROM
+			`review`
+		WHERE
+			`id` = #{id}
+	</select>
+	
+	<insert id="insertReview" parameterType="map">
+		INSERT INTO
+			`review`
+		(
+			`id`
+			,`storeName`
+			,`menu`
+			,`userName`
+			,`point`
+			,`review`
+			,`createdAt`
+			,`updatedAt`
+		)
+		VALUES
+		(
+			#{id}
+			, #{storeName}
+			, #{menu}
+			, #{userName}
+			, #{point}
+			, #{review}
+			, now()
+			, now()
+		)
+		
+		
+	</insert>
+	
+	<insert id="insertReviewByObject" parameterType="com.en3873.spring.ex.mybatis.model.Review">
+		INSERT INTO
+			`review`
+		(
+			`id`
+			,`storeName`
+			,`menu`
+			,`userName`
+			,`point`
+			,`review`
+			,`createdAt`
+			,`updatedAt`
+		)
+		VALUES
+		(
+			#{id}
+			, #{storeName}
+			, #{menu}
+			, #{userName}
+			, #{point}
+			, #{review}
+			, now()
+			, now()
+		)
+		
+		
+	</insert>
+</mapper>

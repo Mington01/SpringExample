@@ -49,7 +49,7 @@
 	<h3>날짜 포맷</h3>
 	
 	<h4>${now }</h4>
-	<h4><fmt:formatDate value="${now }" pattern="yyyy년 MM월 dd일" /></h4>
+	<h4><fmt:formatDate value="${now }" pattern="yyyy년 MM월 dd일 HH시 mm분 ss초" /></h4>
 	<%-- "2023/01/19 21:44:10" --%>
 	<fmt:parseDate value="${dateString }" pattern="yyyy/MM/dd HH:mm:ss" var="date" />
 	<h4>${date }</h4>
